@@ -48,6 +48,7 @@ public class Ex_02 {
             vetor[fim] = aux;
             inicio++;
             fim--;
+            //modificação
         }                
     }
 
