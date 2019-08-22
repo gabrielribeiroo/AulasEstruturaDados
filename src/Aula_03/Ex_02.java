@@ -6,14 +6,14 @@ import java.util.Scanner;
 
 public class Ex_02 {
 
-    public static void imprimirVetor(int [] v){
-        
-        for(int i = 0; i < v.length; i++){
+    public static void imprimirVetor(int[] v) {
+
+        for (int i = 0; i < v.length; i++) {
             System.out.print(v[i] + " ");
         }
         System.out.println();
     }
-    
+
     public static void populaVetorAleatorio(int[] v) {
 
         Random aleatorio = new Random();
@@ -21,7 +21,7 @@ public class Ex_02 {
         //System.out.println("Popule o vetor com números inteiros: ");        
         for (int i = 0; i < v.length; i++) {
             v[i] = aleatorio.nextInt(5) + 1;
-        }     
+        }
     }
 
     public static int leValores() {
@@ -36,20 +36,20 @@ public class Ex_02 {
         } while (qtd < 0 || qtd > 100);
         return qtd;
     }
-    
-    public static void inverterVetor(int [] vetor){
-        
+
+    public static void inverterVetor(int[] vetor) {
+
         int inicio = 0;
         int fim = vetor.length - 1;
-        
-        while(inicio < fim){
+
+        while (inicio < fim) {
             int aux = vetor[inicio];
             vetor[inicio] = vetor[fim];
             vetor[fim] = aux;
             inicio++;
             fim--;
             //modificação
-        }                
+        }
     }
 
     public static void main(String[] args) {
@@ -57,8 +57,8 @@ public class Ex_02 {
         int qtd = leValores();
         int[] vetor = new int[qtd];
         populaVetorAleatorio(vetor);
-        imprimirVetor(vetor);        
+        imprimirVetor(vetor);
         inverterVetor(vetor);
-        imprimirVetor(vetor);        
+        imprimirVetor(vetor);
     }
 }
