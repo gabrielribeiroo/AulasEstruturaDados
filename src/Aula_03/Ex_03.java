@@ -25,19 +25,19 @@ public class Ex_03 {
     }
 
     public static void trocarMaiorElementoComMenor(int[] vet1) {
-        int max = vet1[0], min = vet1[0];
+        int max = vet1[0], min = vet1[0],imax =0,imin=0;
 
         for (int i = 0; i < vet1.length; i++) {
             if (vet1[i] >= max) {
-                max = i;
+                imax = i;
             }
             if (vet1[i] <= min) {
-                min = i;
+                imin = i;
             }
         }
-        int aux = vet1[max];
-        vet1[max] = vet1[min];
-        vet1[min] = aux;
+        int aux = vet1[imax];
+        vet1[imax] = vet1[imin];
+        vet1[imin] = aux;
     }
 
     public static int[] PreencherVetor() {
