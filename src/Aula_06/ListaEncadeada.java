@@ -153,11 +153,17 @@ public class ListaEncadeada {
             ini = novo;
         } else {
             No novo = new No(elemento, null);
-            if (temp.getElements() > novo.getElements()) {
-                novo.setProx(anterior.getProx());
-                anterior.setProx(novo);
-            }else{
-                insereOrdenadoR2(temp, temp.getProx(), elemento);
+            if (novo.getElements() < ini.getElements()) {
+                novo.setProx(ini.getProx());
+                ini = novo;
+            } else {
+
+                if (temp.getElements() > novo.getElements()) {
+                    novo.setProx(anterior.getProx());
+                    anterior.setProx(novo);
+                } else {
+                    insereOrdenadoR2(temp, temp.getProx(), elemento);
+                }
             }
         }
     }

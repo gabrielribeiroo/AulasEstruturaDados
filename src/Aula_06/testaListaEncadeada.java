@@ -41,7 +41,7 @@ public class testaListaEncadeada {
         lst.insereFinalR(33);
         lst.insereFinalR(44);
         System.out.println(lst);
-        lst.insereOrdenadoR(5);
+        lst.insereOrdenadoR(3);
         lst.insereOrdenadoR(39);
         lst.insereOrdenadoR(13);
         System.out.println(lst);
