@@ -134,10 +134,31 @@ public class ListaEncadeada {
             if (temp.getProx() == null) {
                 No novo = new No(elemento, null);
                 temp.setProx(novo);
-            }else{
+            } else {
                 insereFinalR2(temp.getProx(), elemento);
             }
         }
-        
+
+    }
+
+    public void insereOrdenadoR(int elemento) {
+        insereOrdenadoR2(null, ini, elemento);
+    }
+
+    public void insereOrdenadoR2(No anterior, No temp, int elemento) {
+
+        if (temp == null) {
+            No novo = new No(elemento, null);
+            novo.setProx(ini.getProx());
+            ini = novo;
+        } else {
+            No novo = new No(elemento, null);
+            if (temp.getElements() > novo.getElements()) {
+                novo.setProx(anterior.getProx());
+                anterior.setProx(novo);
+            }else{
+                insereOrdenadoR2(temp, temp.getProx(), elemento);
+            }
+        }
     }
 }
