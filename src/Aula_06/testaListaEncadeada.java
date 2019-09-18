@@ -10,16 +10,14 @@ package Aula_06;
  * @author gabriel.rvital
  */
 public class testaListaEncadeada {
-    public static void main (String [] args){
+
+    public static void main(String[] args) {
         /**
-        No p = new No(10,null);
-        No q = new No(20,p);
-        No l = new No(30,q);
-        System.out.println(l);
-        * */
-        
-        
-        
+         * No p = new No(10,null); No q = new No(20,p); No l = new No(30,q);
+         * System.out.println(l);
+        *
+         */
+
         ListaEncadeada lst = new ListaEncadeada();
         lst.insereInicio(30);
         lst.insereInicio(20);
@@ -45,5 +43,18 @@ public class testaListaEncadeada {
         lst.insereOrdenadoR(39);
         lst.insereOrdenadoR(13);
         System.out.println(lst);
+        lst.removerInicio();
+        System.out.println(lst);
+        lst.removerFinal();
+        System.out.println(lst);
+        lst.removerOrdenado(35);
+        System.out.println(lst);
+        lst.removerOrdenado(13);
+        System.out.println(lst);
+        lst.removerOrdenado(33);
+        System.out.println(lst);
+        lst.removerFinalRecursivo();
+        System.out.println(lst);
+       
     }
 }

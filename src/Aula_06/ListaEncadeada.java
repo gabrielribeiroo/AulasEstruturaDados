@@ -167,4 +167,75 @@ public class ListaEncadeada {
             }
         }
     }
+
+    public void removerInicio() {
+        if (!vazia()) {
+            ini = ini.getProx();
+        } else {
+            System.out.println("Lista vazia!");
+        }
+    }
+
+    public void removerFinal() {
+        No temp = ini;
+        No anterior = null;
+
+        while (temp.getProx() != null) {
+            anterior = temp;
+            temp = temp.getProx();
+        }
+        if (anterior == null) {
+            ini = null;
+        } else {
+            if (temp.getProx() == null) {
+                anterior.setProx(null);
+            }
+        }
+
+    }
+
+    public void removerOrdenado(int elemento) {
+
+        if (vazia()) {
+            System.out.println("Lista vazia não é possivel efetuar a remoção");
+        } else {
+
+            No temp = ini;
+            No anterior = null;
+
+            while (temp != null && temp.getElements() != elemento) {
+                anterior = temp;
+                temp = temp.getProx();
+            }
+            if (anterior == null) {
+                ini = ini.getProx();
+            } else {
+                if (temp.getElements() == elemento) {
+                    anterior.setProx(temp.getProx());
+                }
+            }
+        }
+    }
+
+    public void removerFinalRecursivo() {
+        ListaEncadeada.this.removerFinalRecursivo(null, ini);
+    }
+
+    public void removerFinalRecursivo(No anterior, No temp) {
+
+        if (vazia()) {
+            System.out.println("Lista vazia não é possivel efetuar a remoção");
+        } else {
+            if (temp.getProx() == null) {
+                anterior.setProx(null);
+            } else {
+                if (anterior == null && temp.getProx() == null) {
+                    ini = null;
+                } else {
+                    removerFinalRecursivo(temp, temp.getProx());
+                }
+
+            }
+        }
+    }
 }
