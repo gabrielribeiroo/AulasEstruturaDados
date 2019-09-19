@@ -55,6 +55,9 @@ public class testaListaEncadeada {
         System.out.println(lst);
         lst.removerFinalRecursivo();
         System.out.println(lst);
-       
+        lst.inverterLista();
+        System.out.println(lst);
+
+
     }
 }

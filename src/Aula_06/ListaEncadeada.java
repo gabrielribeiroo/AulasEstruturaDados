@@ -238,4 +238,19 @@ public class ListaEncadeada {
             }
         }
     }
+
+    public void inverterLista() {
+        No anterior = null;
+        No temp = ini;
+        No aux = null;
+
+        while (temp.getProx() != null) {
+            aux = anterior;
+            anterior = temp;
+            temp = temp.getProx();
+            anterior.setProx(aux);
+        }
+        ini = temp;
+        ini.setProx(anterior);
+    }
 }
